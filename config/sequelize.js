@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize');
-const blogModel = require('../models/blog')
+const blogModel = require('../models/blog');
+const categoryModel = require('../models/category');
+const contactModel = require('../models/contact');
 const dbConfig = {
     HOST: "localhost",
     USER: "postgres",
@@ -26,5 +28,6 @@ const dbConfig = {
   });
 
   blogModel(sequelize, Sequelize)
-
+  categoryModel(sequelize, Sequelize)
+  contactModel(sequelize, Sequelize)
   module.exports = sequelize

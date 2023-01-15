@@ -13,23 +13,43 @@ module.exports = (sequelize, type) => {
             allowNull: false
         },
         title: {
-            type: type.STRING,
+            type: type.TEXT,
             allowNull: true
         },
         subTitle: {
-            type: type.STRING,
+            type: type.TEXT,
             allowNull: true
         },
         description: {
-            type: type.STRING,
+            type: type.TEXT,
             allowNull: true
         },
         link: {
-            type: type.STRING,
+            type: type.TEXT,
             allowNull: true
         },
         metaData: {
             type: type.JSONB,
+            allowNull: true
+        },
+        ImageUrl:{
+            type: type.TEXT,
+            allowNull: true
+        },
+        type:{
+            type: type.STRING,
+            allowNull: true
+        },
+        videoUrl:{
+            type: type.TEXT,
+            allowNull: true
+        },
+        ImageName:{
+            type: type.TEXT,
+            allowNull: true
+        },
+        videoName:{
+            type: type.TEXT,
             allowNull: true
         },
         userId: {

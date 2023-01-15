@@ -43,60 +43,64 @@
                     <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as
                         soon as possible!</p>
                     <div class="my-5">
-                        <form id="createForm" data-sb-form-api-token="API_TOKEN" method="post" type="submit">
+                        <form action="/create-blog" method="POST" enctype="multipart/form-data">
                             <div class="form-floating">
-                                <input class="form-control" id="title" type="text" placeholder="Enter your title..."
-                                     />
+                                <input class="form-control" name="title" type="text"
+                                    placeholder="Enter your title..." />
                                 <label for="title">Title</label>
                                 <!-- <div class="invalid-feedback" data-sb-feedback="title:required">A title is required.</div> -->
                             </div>
                             <div class="form-floating">
-                                <input class="form-control" id="subTitle" type="text" placeholder="Enter your sub Title..."
-                                    />
+                                <input class="form-control" name="subTitle" type="text"
+                                    placeholder="Enter your sub Title..." />
                                 <label for="subTitle">Sub Title</label>
                                 <!-- <div class="invalid-feedback" data-sb-feedback="subTitle:required">An Sub Title is required.
                                 </div> -->
                             </div>
                             <div class="form-floating">
-                                <textarea class="form-control" id="description" placeholder="Enter your Description here..."
-                                    style="height: 12rem"></textarea>
+                                <input class="form-control" name="imageFile" type="file" placeholder="upload your file..." />
+                                <label for="file">File</label>
+                                <!-- <div class="invalid-feedback" data-sb-feedback="subTitle:required">An Sub Title is required.
+                                </div> -->
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" name="video" type="file"
+                                    placeholder="upload your video..." />
+                                <label for="video">Video</label>
+                                <!-- <div class="invalid-feedback" data-sb-feedback="subTitle:required">An Sub Title is required.
+                                </div> -->
+                            </div>
+                            <div class="form-floating">
+                                <label for="type">Type</label>
+                                <select name="type" id="type">
+                                    <option class="dropdown-item" value="motivation" name="motivation">Motivation</option>
+                                    <option class="dropdown-item" value="technology" name="technology">Technology</option>
+                                    <option class="dropdown-item" value="science" name="science">Science</option>
+                                    <option class="dropdown-item" value="space" name="space">Space</option>
+                                    <option class="dropdown-item" value="javascript" name="javascript">Javascript</option>
+                                </select>
+                            </div>
+                           
+                            <div class="form-floating">
+                                <textarea class="form-control" name="description" type="text"
+                                    placeholder="Enter your Description here..." style="height: 12rem"></textarea>
                                 <label for="Description">Description</label>
                                 <!-- <div class="invalid-feedback" data-sb-feedback="description:required">A description is required.
                                 </div> -->
                             </div>
                             <div class="form-floating">
-                                <textarea class="form-control" id="link" placeholder="Enter your Link here..."
-                                    style="height: 12rem" ></textarea>
+                                <textarea class="form-control" name="link" type="text"
+                                    placeholder="Enter your Link here..." style="height: 12rem"></textarea>
                                 <label for="link">Link</label>
                                 <!-- <div class="invalid-feedback" data-sb-feedback="link:required">A Link is required.
                                 </div> -->
                             </div>
                             <br />
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a
-                                        href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage">
-                                <div class="text-center text-danger mb-3">Error sending message!</div>
-                            </div>
                             <!-- Submit Button-->
-                            <button class="btn btn-primary text-uppercase disabled" id="submitButton"
-                                type="button">Create Blog</button>
+                            <button class="btn btn-primary " type="submit">Create Blog</button>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -128,7 +132,7 @@
 
     <script>
         $(document).ready(function () {
-            
+
         })
         $("#createForm").on('submit', function (event) {
             alert('hi')

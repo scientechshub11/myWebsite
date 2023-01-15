@@ -7,11 +7,13 @@ async function runDatabase(){
     console.log('database connected succesfully!!!')
 }
 runDatabase()
+app.use(bodyParser.urlencoded({extended: true}))
 app.set("view engine", "ejs")
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/uploads'));
 
-app.listen(8080, function () {
-    console.log("Server is running on port 8080 ");
+app.listen(1000, function () {
+    console.log("Server is running on port 1000 ");
   });
 const blogRoutes = require('./routes/blog')
 
